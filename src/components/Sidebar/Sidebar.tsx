@@ -10,17 +10,20 @@ interface SidebarProps {
 
 const Sidebar: FC<SidebarProps> = () => {
     return (
-        <div className="sidebar">
+        <div className="sidebar-wrapper">
 
-            <div>
-                <NavLink to={"/"}>
-                    <img src={logo} alt="logo" className="sidebar__logo"/>
-                </NavLink>
+            <div className="sidebar">
+
+                <div>
+                    <NavLink to={"/"}>
+                        <img src={logo} alt="logo" className="sidebar__logo"/>
+                    </NavLink>
+                </div>
+
+                <SideNav/>
             </div>
-
-            <SideNav/>
         </div>
-    )
+)
 }
 
 
