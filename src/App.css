@@ -12,3 +12,7 @@
     padding: 20px 60px 0 60px;
 
 }
+
+.blured{
+    filter: blur(5px);
+}
