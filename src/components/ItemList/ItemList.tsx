@@ -54,6 +54,9 @@ const ItemList: FC<ItemListProps> = () => {
                 setRowData(res.data)
             })
 
+        document.title = 'ItemList';
+
+
     }, [])
 
     return (
