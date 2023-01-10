@@ -1,9 +1,10 @@
 import {FC} from "react";
+import Header from "../Header/Header";
 
 const Home: FC = () => {
     return(
         <div className={"content"}>
-            Home
+            <Header title={"Home"}/>
         </div>
     )
 }
