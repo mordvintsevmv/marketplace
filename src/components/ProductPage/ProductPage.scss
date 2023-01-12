@@ -1,5 +1,5 @@
 .product-page{
-  padding: 25px;
+  padding: 45px;
 
   position: fixed;
 
@@ -10,21 +10,18 @@
 
   background-color: #556899;
   height:100vh;
-  width: 400px;
+  width: 500px;
   z-index: 20;
 
   &__image{
 
-    width: 250px;
-    overflow: hidden;
+    margin-bottom: 15px;
 
     & img{
       max-height: 300px;
-      max-width: 250px;
+      max-width: 300px;
 
       border-radius: 15px;
-
-      display: inline-block;
 
     }
   }
@@ -43,6 +40,8 @@
     color: #D1D1D1;
     font-size: 14px;
     text-decoration: underline;
+
+    margin-bottom: 15px;
   }
 
   &__price{
@@ -51,10 +50,19 @@
     float: right;
   }
 
-  &:hover{
-    -webkit-box-shadow: 0 0 20px 6px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0 0 20px 6px rgba(34, 60, 80, 0.2);
-    box-shadow: 0 0 20px 6px rgba(34, 60, 80, 0.2);
+  &__cross{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+
+    & img{
+      height: 25px;
+      width: 25px;
+    }
+
+    &:hover{
+      cursor: pointer;
+    }
   }
 }
 

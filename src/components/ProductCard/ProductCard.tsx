@@ -1,9 +1,13 @@
 import {FC} from "react";
 import {IProduct} from "../../types/product";
 import "./ProductCard.scss"
-import star from "../../img/star.svg"
-import people from "../../img/people.svg"
 import {NavLink} from "react-router-dom";
+import {Stack} from "@mui/material"
+import IconButton from '@mui/material/IconButton';
+import HeartButton from "@mui/icons-material/FavoriteBorderOutlined"
+import {ShoppingCart} from "@mui/icons-material";
+import people from "../../img/people.svg"
+import star from "../../img/star.svg"
 
 interface ProductCardProps {
     product: IProduct
@@ -27,13 +31,25 @@ const ProductCard: FC<ProductCardProps> = ({product}) => {
                     {product.category}
                 </div>
 
+                <Stack direction={"row"}>
+
+                    <IconButton aria-label={"Add to cart"} color="primary">
+                        <ShoppingCart/>
+                    </IconButton>
+
+                    <IconButton aria-label={"Add to cart"} color="primary">
+                        <HeartButton/>
+                    </IconButton>
+
+                </Stack>
+
                 <div className={"product-card__price"}>
-                    <h2>${product.price}</h2>
+                    <h3>${product.price}</h3>
                 </div>
 
                 <div className={"product-card__rating product-card-rating"}>
                     <div className={"product-card-rating__top"}>
-                        <img src={star} alt={"rating"} className={"product-card-rating__star"}/>
+                        <img src={star} alt={"rate"} className={"product-card-rating__star"}/>
                         <span
                             className={"product-card-rating__rate"}
                             style={product.rating.rate > 3.5 ? {color: "#B5D495"} : {color: "#EF7873"}}

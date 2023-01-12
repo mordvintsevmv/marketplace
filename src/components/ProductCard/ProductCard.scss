@@ -1,4 +1,4 @@
-.product-card{
+.product-card {
   height: 350px;
   width: 250px;
   border-radius: 25px;
@@ -7,7 +7,7 @@
   position: relative;
   cursor: pointer;
 
-  &__image{
+  &__image {
     display: flex;
     align-items: center;
 
@@ -17,48 +17,49 @@
 
     overflow: hidden;
 
-    & img{
+    & img {
       max-height: 230px;
       max-width: 150px;
 
     }
   }
 
-  &__title{
+  &__title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
-  &__rating{
+  &__rating {
     position: absolute;
     right: 10px;
     top: 10px;
     z-index: 10;
   }
 
-  &__category{
+  &__category {
     color: #D1D1D1;
     font-size: 14px;
     text-decoration: underline;
   }
 
-  &__price{
-    margin-top: 15px;
-    color: #FBD825;
-    float: right;
+  &__price {
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    color: #556899;
   }
 
-  &:hover{
-    -webkit-box-shadow: 0px 0px 20px 6px rgba(34, 60, 80, 0.2);
-    -moz-box-shadow: 0px 0px 20px 6px rgba(34, 60, 80, 0.2);
-    box-shadow: 0px 0px 20px 6px rgba(34, 60, 80, 0.2);
+  &:hover {
+    -webkit-box-shadow: 0 0 20px 6px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0 0 20px 6px rgba(34, 60, 80, 0.2);
+    box-shadow: 0 0 20px 6px rgba(34, 60, 80, 0.2);
   }
 }
 
-.product-card-rating{
+.product-card-rating {
 
-  &__top{
+  &__top {
     position: absolute;
     top: 0;
     right: 20px;
@@ -68,7 +69,7 @@
     gap: 5px;
   }
 
-  &__bottom{
+  &__bottom {
     position: absolute;
     top: 25px;
     right: 15px;
@@ -79,20 +80,19 @@
 
   }
 
-
-  &__star{
+  &__star {
     width: 20px;
   }
 
-  &__rate{
+  &__rate {
     font-size: 20px;
   }
 
-  &__people{
+  &__people {
     width: 12px;
   }
 
-  &__count{
+  &__count {
     color: #D1D1D1;
     font-size: 12px;
   }
