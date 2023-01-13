@@ -16,10 +16,14 @@ const Products: FC<PropsWithChildren> = ({children}) => {
 
     useEffect(() => {
         document.title = 'Products';
-        fetchProducts();
+        if (products.length === 0){
+            fetchProducts();
+        } else{
+            console.log(products)
+        }
     }, []);
 
-    let content = <></>
+    let content: JSX.Element
 
     if (loading) {
         content =

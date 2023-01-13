@@ -4,8 +4,10 @@ import {AgGridReact} from "ag-grid-react";
 
 import "ag-grid-community/dist/styles/ag-grid.css"
 import "ag-grid-community/dist/styles/ag-theme-alpine.css"
-import axios from "axios";
 import Header from "../Header/Header";
+import {useTypedSelector} from "../../hooks/typedHooks";
+import {useActions} from "../../hooks/actions";
+import {IProduct} from "../../types/product";
 
 interface ItemListProps {
 
@@ -30,7 +32,7 @@ const ProductImage = (data: any) => {
 
 const ItemList: FC<ItemListProps> = () => {
 
-    const [rowData, setRowData] = useState([]);
+    const [rowData, setRowData] = useState<IProduct[]>([]);
 
     const [columnDefs, setColumnDefs] = useState([
         {field: "id"},
@@ -48,16 +50,17 @@ const ItemList: FC<ItemListProps> = () => {
         }
     ), [])
 
+    const {products} = useTypedSelector(state => state.productReducer)
+    const {fetchProducts} = useActions()
+
     useEffect(() => {
-        axios.get("https://fakestoreapi.com/products")
-            .then(res => {
-                setRowData(res.data)
-            })
+        if (products.length === 0){
+            fetchProducts();
+        }
 
         document.title = 'ItemList';
-
-
-    }, [])
+        setRowData(products);
+    }, [products])
 
     return (
         <div className="itemlist content">
