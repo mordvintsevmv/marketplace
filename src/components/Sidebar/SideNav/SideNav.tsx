@@ -2,7 +2,7 @@ import {FC} from "react";
 import {NavLink} from "react-router-dom";
 import home from "../../../img/home.svg"
 import list from "../../../img/list.svg"
-import products from "../../../img/products.svg"
+import table from "../../../img/table.svg"
 
 const SideNav: FC = () => {
 
@@ -16,12 +16,12 @@ const SideNav: FC = () => {
 
                 <NavLink to={"list"}
                          className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
-                    <img src={list} alt={"list"} className={"sidebar-nav__img"}/>
+                    <img src={table} alt={"table"} className={"sidebar-nav__img"}/>
                 </NavLink>
 
                 <NavLink to={"products"}
                          className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
-                    <img src={products} alt={"list"} className={"sidebar-nav__img"}/>
+                    <img src={list} alt={"list"} className={"sidebar-nav__img"}/>
                 </NavLink>
 
             </nav>

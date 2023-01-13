@@ -5,7 +5,8 @@ import axios from "axios";
 import {IProduct} from "../../types/product";
 import star from "../../img/star.svg";
 import people from "../../img/people.svg";
-import cross from "../../img/cross.svg"
+import IconButton from "@mui/material/IconButton";
+import {Close} from "@mui/icons-material";
 
 const ProductPage: FC = () => {
 
@@ -24,9 +25,12 @@ const ProductPage: FC = () => {
         <div className={"product-page"}>
 
             <NavLink to={"/products"}>
-            <div className={"product-page__cross"}>
-                <img src={cross} alt={"close"}/>
-            </div>
+                <div className={"product-page__cross"}>
+                    <IconButton>
+                        <Close/>
+                    </IconButton>
+                </div>
+
             </NavLink>
 
             <div className={"product-page__image"}>
