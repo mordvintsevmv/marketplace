@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/marketplace/static/css/main.de6e3220.css",
-    "main.js": "/marketplace/static/js/main.d5cec5c8.js",
+    "main.css": "/marketplace/static/css/main.d485651d.css",
+    "main.js": "/marketplace/static/js/main.75c013c2.js",
     "index.html": "/marketplace/index.html",
     "static/media/home.svg": "/marketplace/static/media/home.fdd8c8f410c4c12a90f7751e24b3d41e.svg",
     "static/media/people.svg": "/marketplace/static/media/people.e6633497c3535726b65d9cb4e11e80f6.svg",
-    "static/media/products.svg": "/marketplace/static/media/products.be45a242df5fb3646ff4a5e34f50f159.svg",
-    "static/media/star.svg": "/marketplace/static/media/star.476f740afabb16c40a89b23a97f4fc21.svg",
+    "static/media/star.svg": "/marketplace/static/media/star.2fd95fa9fa58136d86968647721c296e.svg",
+    "static/media/table.svg": "/marketplace/static/media/table.bc7cce4907255bb8fa1bce6d2b5ade24.svg",
     "static/media/list.svg": "/marketplace/static/media/list.e686978c2694af090590ca949fc1d71c.svg",
-    "main.de6e3220.css.map": "/marketplace/static/css/main.de6e3220.css.map",
-    "main.d5cec5c8.js.map": "/marketplace/static/js/main.d5cec5c8.js.map"
+    "main.d485651d.css.map": "/marketplace/static/css/main.d485651d.css.map",
+    "main.75c013c2.js.map": "/marketplace/static/js/main.75c013c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.de6e3220.css",
-    "static/js/main.d5cec5c8.js"
+    "static/css/main.d485651d.css",
+    "static/js/main.75c013c2.js"
   ]
 }
