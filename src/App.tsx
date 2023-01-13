@@ -22,8 +22,6 @@ function App() {
 
                 <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
 
-
-
             </Routes>
 
         </div>
