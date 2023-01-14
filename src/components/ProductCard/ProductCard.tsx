@@ -1,4 +1,4 @@
-import React, {FC, useCallback} from "react";
+import React, {FC, useCallback, useEffect, useState} from "react";
 import {IProduct} from "../../types/product";
 import "./ProductCard.scss"
 import {NavLink} from "react-router-dom";
@@ -15,18 +15,93 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({product}) => {
 
+    const [favFlag, setFavFlag] = useState(false)
+    const [cartFlag, setCartFlag] = useState(false)
 
-    const addCartHandler = useCallback(
-        (event: React.MouseEvent<HTMLElement>) => {
-            event.stopPropagation()
+    const checkInCart = useCallback(
+        () => {
+            let cart = localStorage.getItem("cart")
+            if (cart !== null) {
+                let cartArr = cart.split(",");
+                if (cartArr.includes(String(product.id))) {
+                    setCartFlag(true)
+                } else{
+                    setCartFlag(false)
+                }
+            }
         }, []
     )
 
-    const addFavoriteHandler = useCallback(
-        (event: React.MouseEvent<HTMLElement>) => {
-            event.stopPropagation()
+    const checkInFav = useCallback(
+        () => {
+            let fav = localStorage.getItem("favorite")
+            if (fav !== null) {
+                let favArr = fav.split(",");
+                if (favArr.includes(String(product.id))) {
+                    setFavFlag(true)
+                } else{
+                    setFavFlag(false)
+                }
+            }
         }, []
     )
+
+    const CartHandler = useCallback(
+        (event: React.MouseEvent<HTMLElement>) => {
+            let cart = localStorage.getItem("cart")
+
+            if (cart !== null) {
+                let cartArr = cart.split(",");
+
+                if (cartArr.includes(String(product.id))) {
+                    cartArr = cartArr.filter((id) => {
+                        return id !== String(product.id)
+                    })
+                    localStorage.setItem("cart", cartArr.toString())
+                } else {
+                    localStorage.setItem("cart", String(cart + "," + String(product.id)))
+                }
+            } else {
+                localStorage.setItem("cart", String(cart + "," + String(product.id)))
+            }
+
+            checkInCart();
+
+        }, []
+    )
+
+    const FavoriteHandler = useCallback(
+        (event: React.MouseEvent<HTMLElement>) => {
+            let fav = localStorage.getItem("favorite")
+
+            if (fav !== null) {
+                let favArr = fav.split(",");
+
+                if (favArr.includes(String(product.id))) {
+                    favArr = favArr.filter((id) => {
+                        return id !== String(product.id)
+                    })
+                    localStorage.setItem("favorite", favArr.toString())
+                } else {
+                    localStorage.setItem("favorite", String(fav + "," + String(product.id)))
+                }
+            } else {
+                localStorage.setItem("favorite", String(fav + "," + String(product.id)))
+            }
+
+            checkInFav();
+
+        }, []
+    )
+
+
+    useEffect(() => {
+        checkInCart();
+        checkInFav();
+
+    }, [])
+
+
 
     return (
 
@@ -51,14 +126,14 @@ const ProductCard: FC<ProductCardProps> = ({product}) => {
 
             <Stack direction={"row"}>
 
-                    <span onClick={addCartHandler}>
-                        <IconButton aria-label={"Add to cart"} color="primary">
+                    <span onClick={CartHandler}>
+                        <IconButton aria-label={"Add to cart"} color={cartFlag ? "secondary" : "primary"}>
                             <ShoppingCart/>
                         </IconButton>
                     </span>
 
-                <span onClick={addFavoriteHandler}>
-                    <IconButton aria-label={"Add to favorite"} color="primary">
+                <span onClick={FavoriteHandler}>
+                    <IconButton aria-label={"Add to favorite"} color={favFlag ? "secondary" : "primary"}>
                         <HeartButton/>
                     </IconButton>
                     </span>
