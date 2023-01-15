@@ -6,5 +6,5 @@ export const useActions = () => {
     const dispatch = useTypedDispatch();
     return bindActionCreators({
         ...productActions
-        }, dispatch)
+    }, dispatch)
 }

@@ -5,6 +5,7 @@ import IconButton from "@mui/material/IconButton";
 interface FavoriteButtonProps {
     productID: number
 }
+
 const FavoriteButton: FC<FavoriteButtonProps> = ({productID}) => {
 
     const [favFlag, setFavFlag] = useState(false)
@@ -16,7 +17,7 @@ const FavoriteButton: FC<FavoriteButtonProps> = ({productID}) => {
                 let favArr = fav.split(",");
                 if (favArr.includes(String(productID))) {
                     setFavFlag(true)
-                } else{
+                } else {
                     setFavFlag(false)
                 }
             }

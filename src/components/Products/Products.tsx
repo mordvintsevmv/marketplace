@@ -16,9 +16,9 @@ const Products: FC<PropsWithChildren> = ({children}) => {
 
     useEffect(() => {
         document.title = 'Products';
-        if (products.length === 0){
+        if (products.length === 0) {
             fetchProducts();
-        } else{
+        } else {
             console.log(products)
         }
     }, []);

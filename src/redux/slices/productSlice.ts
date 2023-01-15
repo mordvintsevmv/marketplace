@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 import {IProduct} from "../../types/product";
 
 interface ProductState {
-    products: IProduct[] ,
+    products: IProduct[],
     loading: boolean,
     error: null | string
 }
@@ -16,7 +16,7 @@ const initialState: ProductState = {
 export const productSlice = createSlice({
     name: "products",
     initialState,
-    reducers:{
+    reducers: {
         productsLoading: (state) => {
             state.loading = true;
         },

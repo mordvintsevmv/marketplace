@@ -8,7 +8,7 @@ const Home: FC = () => {
     }, []);
 
 
-    return(
+    return (
         <div className={"content"}>
             <Header title={"Home"}/>
         </div>

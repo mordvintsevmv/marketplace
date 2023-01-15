@@ -12,18 +12,19 @@ import {IProduct} from "../../types/product";
 interface ItemListProps {
 
 }
+
 const Rating = (data: any) => {
 
-    return(
+    return (
         <>
             {data.value.rate}
         </>
-        )
+    )
 }
 
 const ProductImage = (data: any) => {
 
-    return(
+    return (
         <>
             <img src={data.value} alt={"product"}/>
         </>
@@ -54,7 +55,7 @@ const ItemList: FC<ItemListProps> = () => {
     const {fetchProducts} = useActions()
 
     useEffect(() => {
-        if (products.length === 0){
+        if (products.length === 0) {
             fetchProducts();
         }
 
@@ -63,11 +64,11 @@ const ItemList: FC<ItemListProps> = () => {
     }, [products])
 
     return (
-        <div className="itemlist content">
+        <div className="item-list content">
 
             <Header title={"ItemList"}/>
 
-            <div className={"ag-theme-alpine itemlist__table"}>
+            <div className={"ag-theme-alpine item-list__table"}>
 
                 <AgGridReact
                     rowData={rowData}

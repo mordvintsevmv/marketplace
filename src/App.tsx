@@ -6,8 +6,10 @@ import {Route, Routes} from "react-router-dom"
 import Home from "./components/Home/Home";
 import Products from "./components/Products/Products"
 import ProductPage from "./components/ProductPage/ProductPage";
+import FavoritePage from "./components/FavoritePage/FavoritePage";
 
 function App() {
+
     return (
         <div className="app">
             <Sidebar/>
@@ -21,6 +23,8 @@ function App() {
                 <Route path="/products" element={<Products/>}/>
 
                 <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
+
+                <Route path="/favorite" element={<FavoritePage/>}/>
 
             </Routes>
 

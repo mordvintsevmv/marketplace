@@ -23,7 +23,7 @@ const Sidebar: FC<SidebarProps> = () => {
                 <SideNav/>
             </div>
         </div>
-)
+    )
 }
 
 
