@@ -32,7 +32,10 @@ const ProductCard: FC<ProductCardProps> = ({product}) => {
 
 
             <div className={"product-card__category"}>
+                <NavLink to={`/categories/${product.category}`}>
                 {product.category}
+                </NavLink>
+
             </div>
 
             <Stack direction={"row"}>
