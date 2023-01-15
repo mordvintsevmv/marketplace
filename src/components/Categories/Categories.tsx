@@ -5,6 +5,7 @@ import CategoryButton from "../Buttons/CategoryButton";
 import {useParams} from "react-router-dom";
 import {IProduct} from "../../types/product";
 import ProductCard from "../ProductCard/ProductCard";
+import {Stack} from "@mui/material";
 
 const Categories: FC = () => {
 
@@ -17,15 +18,15 @@ const Categories: FC = () => {
 
     const {category} = useParams()
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get('https://fakestoreapi.com/products/categories')
             .then(res => setCategories(res.data))
-    },[])
+    }, [])
 
-    useEffect(()=>{
+    useEffect(() => {
         axios.get(`https://fakestoreapi.com/products/category/${category}`)
             .then(res => setProducts(res.data))
-    },[category])
+    }, [category])
 
     return (
         <div className={""}>
@@ -33,7 +34,9 @@ const Categories: FC = () => {
 
             <Header title={"Categories"}/>
 
-            {catBut}
+            <Stack direction={"row"}>
+                {catBut}
+            </Stack>
 
             {productCard}
 

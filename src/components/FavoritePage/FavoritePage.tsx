@@ -18,7 +18,7 @@ const FavoritePage: FC = () => {
     }
 
     return (
-        <div className={"favorite-page content"}>
+        <div className={"favorite-page"}>
             <Header title={"Favorite Items"}/>
 
             <div>
