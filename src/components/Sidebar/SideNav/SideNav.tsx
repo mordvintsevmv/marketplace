@@ -4,6 +4,7 @@ import home from "../../../img/home.svg"
 import list from "../../../img/list.svg"
 import table from "../../../img/table.svg"
 import heart from "../../../img/heart.svg"
+import categories from "../../../img/categories.svg"
 
 const SideNav: FC = () => {
 
@@ -28,6 +29,11 @@ const SideNav: FC = () => {
                 <NavLink to={"favorite"}
                          className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
                     <img src={heart} alt={"favorite"} className={"sidebar-nav__img"}/>
+                </NavLink>
+
+                <NavLink to={"categories"}
+                         className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
+                    <img src={categories} alt={"categories"} className={"sidebar-nav__img"}/>
                 </NavLink>
 
             </nav>

@@ -8,6 +8,7 @@ import Products from "./components/Products/Products"
 import ProductPage from "./components/ProductPage/ProductPage";
 import FavoritePage from "./components/FavoritePage/FavoritePage";
 import {useTypedSelector} from "./hooks/typedHooks";
+import Categories from "./components/Categories/Categories";
 
 function App() {
 
@@ -30,6 +31,10 @@ function App() {
                     <Route path="/products" element={<Products/>}/>
 
                     <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
+
+                    <Route path="/categories" element={<Categories/>}/>
+
+                    <Route path="/categories/:category" element={<Categories/>}/>
 
                     <Route path="/favorite" element={<FavoritePage/>}/>
 
