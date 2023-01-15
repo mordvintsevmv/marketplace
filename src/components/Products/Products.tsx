@@ -41,7 +41,7 @@ const Products: FC<PropsWithChildren> = ({children}) => {
     }
 
     return (
-        <div className={"products content"}>
+        <div className={"products"}>
 
             {children}
 

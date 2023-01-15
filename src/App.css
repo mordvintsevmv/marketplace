@@ -26,8 +26,12 @@
 }
 
 
-.content {
+.content-light {
     background-color: #F0EEEF;
+}
+
+.content-dark {
+    background-color: #202124;
 }
 
 .blured {

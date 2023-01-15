@@ -7,29 +7,40 @@ import Home from "./components/Home/Home";
 import Products from "./components/Products/Products"
 import ProductPage from "./components/ProductPage/ProductPage";
 import FavoritePage from "./components/FavoritePage/FavoritePage";
+import {useTypedSelector} from "./hooks/typedHooks";
 
 function App() {
 
+    const theme = useTypedSelector(state => state.themeReducer)
+
     return (
         <div className="app">
-            <Sidebar/>
 
-            <Routes>
+            <div className={`sidebar-${theme}`}>
+                <Sidebar/>
+            </div>
 
-                <Route path="/" element={<Home/>}/>
+            <div className={`content content-${theme}`}>
+                <Routes>
 
-                <Route path="/list" element={<ItemList/>}/>
+                    <Route path="/" element={<Home/>}/>
 
-                <Route path="/products" element={<Products/>}/>
+                    <Route path="/list" element={<ItemList/>}/>
 
-                <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
+                    <Route path="/products" element={<Products/>}/>
 
-                <Route path="/favorite" element={<FavoritePage/>}/>
+                    <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
 
-            </Routes>
+                    <Route path="/favorite" element={<FavoritePage/>}/>
+
+
+                </Routes>
+            </div>
+
 
         </div>
-    );
+    )
+        ;
 }
 
 export default App;

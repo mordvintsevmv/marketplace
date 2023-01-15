@@ -9,7 +9,7 @@ const Home: FC = () => {
 
 
     return (
-        <div className={"content"}>
+        <div className={""}>
             <Header title={"Home"}/>
         </div>
     )

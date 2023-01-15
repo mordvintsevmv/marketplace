@@ -64,7 +64,7 @@ const ItemList: FC<ItemListProps> = () => {
     }, [products])
 
     return (
-        <div className="item-list content">
+        <div className="item-list">
 
             <Header title={"ItemList"}/>
 
