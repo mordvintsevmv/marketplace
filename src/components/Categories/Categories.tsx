@@ -12,6 +12,16 @@ const Categories: FC = () => {
 
     const [categories, setCategories] = useState<String[]>([])
     const catBut = categories.map(cat => <CategoryButton category={String(cat)}/>)
+    let catStack: React.ReactNode[] = []
+
+    for (let i=0; i<catBut.length; i=i+2){
+        catStack.push(
+            <Stack direction={"row"} justifyContent="space-around" pb={"20px"}>
+                {catBut[i]}
+                {catBut[i+1] ? catBut[i+1] : null}
+            </Stack>
+        )
+    }
 
     const [products, setProducts] = useState<IProduct[]>([])
     const productCard = products.map(product => <ProductCard product={product} key={product.id}/>)
@@ -35,9 +45,7 @@ const Categories: FC = () => {
             <Header title={"Categories"}/>
 
             <div className={"categories__buttons"}>
-            <Stack direction={"row"} justifyContent="space-around">
-                {catBut}
-            </Stack>
+                {catStack}
             </div>
 
 
