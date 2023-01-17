@@ -18,9 +18,7 @@ function App() {
     return (
         <div className={`app app-${theme}`}>
 
-            <div className={`sidebar-${theme}`}>
                 <Sidebar/>
-            </div>
 
             <div className={`content content-${theme}`}>
                 <Routes>
