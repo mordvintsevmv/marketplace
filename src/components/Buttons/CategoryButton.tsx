@@ -22,7 +22,7 @@ const CategoryButton: FC<CategoryButtonProps> = ({category}) => {
     return (
         <span>
             <NavLink to={"/categories/"+category}>
-                <Button startIcon={icon}>
+                <Button startIcon={icon} size={"small"}>
                     {category}
                 </Button>
             </NavLink>

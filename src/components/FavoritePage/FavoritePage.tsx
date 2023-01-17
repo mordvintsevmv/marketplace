@@ -2,6 +2,7 @@ import {FC} from "react";
 import Header from "../Header/Header";
 import ProductCard from "../ProductCard/ProductCard";
 import {useTypedSelector} from "../../hooks/typedHooks";
+import "../../App.css"
 
 const FavoritePage: FC = () => {
 
@@ -21,7 +22,7 @@ const FavoritePage: FC = () => {
         <div className={"favorite-page"}>
             <Header title={"Favorite Items"}/>
 
-            <div>
+            <div className={"cards-adaptive"}>
                 {favCards}
             </div>
         </div>

@@ -3,6 +3,7 @@ import Header from "../Header/Header";
 import ProductCard from "../ProductCard/ProductCard";
 import {IProduct} from "../../types/product";
 import "./Products.scss"
+import "../../App.css"
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
 import Loading from "../Loading/Loading";
@@ -35,7 +36,7 @@ const Products: FC<PropsWithChildren> = ({children}) => {
             </div>
     } else {
         content =
-            <div className={children ? " blured products__cards" : "products__cards"}>
+            <div className={children ? " blured cards-adaptive" : "cards-adaptive"}>
                 {ProductCards}
             </div>
     }
