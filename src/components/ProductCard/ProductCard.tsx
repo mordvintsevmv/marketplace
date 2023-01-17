@@ -7,6 +7,7 @@ import people from "../../img/people.svg"
 import star from "../../img/star.svg"
 import CartButton from "../Buttons/CartButton";
 import FavoriteButton from "../Buttons/FavoriteButton";
+import {useTypedSelector} from "../../hooks/typedHooks";
 
 interface ProductCardProps {
     product: IProduct
@@ -14,9 +15,11 @@ interface ProductCardProps {
 
 const ProductCard: FC<ProductCardProps> = ({product}) => {
 
+    const theme = useTypedSelector(state => state.themeReducer)
+
     return (
 
-        <div className={"product-card"}>
+        <div className={`product-card product-card-${theme}`}>
 
             <NavLink to={"/products/" + product.id}>
 
@@ -50,7 +53,7 @@ const ProductCard: FC<ProductCardProps> = ({product}) => {
                 <h3>${product.price}</h3>
             </div>
 
-            <div className={"product-card__rating product-card-rating"}>
+            <div className={`product-card__rating product-card-rating`}>
                 <div className={"product-card-rating__top"}>
                     <img src={star} alt={"rate"} className={"product-card-rating__star"}/>
                     <span
@@ -60,7 +63,7 @@ const ProductCard: FC<ProductCardProps> = ({product}) => {
                 </div>
 
                 <div className={"product-card-rating__bottom"}>
-                    <img src={people} alt={"count"} className={"product-card-rating__people"}/>
+                    <img src={people} alt={"count"} className={`product-card-rating__people product-card-rating__people-${theme}`}/>
                     <span className={"product-card-rating__count"}>{product.rating.count}</span>
                 </div>
 
