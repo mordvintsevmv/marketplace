@@ -80,6 +80,16 @@
 
 }
 
+.sidebar-nav-dark {
+  & img {
+    filter: invert(100%);
+  }
+}
+
+.sidebar-nav-light {
+
+}
+
 .sidebar-dark{
   background-color: #171717;
 
@@ -87,5 +97,4 @@
 
 .sidebar-light{
   background-color: #FFFFFF;
-
 }

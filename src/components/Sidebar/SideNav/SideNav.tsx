@@ -5,12 +5,15 @@ import list from "../../../img/list.svg"
 import table from "../../../img/table.svg"
 import heart from "../../../img/heart.svg"
 import categories from "../../../img/categories.svg"
+import {useTypedSelector} from "../../../hooks/typedHooks";
 
 const SideNav: FC = () => {
 
+    const theme = useTypedSelector(state => state.themeReducer)
+
     return (
         <div>
-            <nav className="sidebar__nav sidebar-nav">
+            <nav className={`sidebar__nav sidebar-nav sidebar-nav-${theme}`}>
                 <NavLink to={""}
                          className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
                     <img src={home} alt={"home"} className={"sidebar-nav__img"}/>

@@ -1,7 +1,7 @@
 import {FC} from "react";
 import "./Header.scss"
 import IconButton from "@mui/material/IconButton";
-import {DarkMode} from "@mui/icons-material";
+import {DarkMode, LightMode} from "@mui/icons-material";
 import {Stack} from "@mui/material";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
@@ -23,14 +23,16 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
         <div className={"header"}>
             <h1>{title}</h1>
 
-            <Stack direction={"row"}>
-                <span onClick={changeThemeHandler}>
-                <IconButton>
-                    <DarkMode/>
-                </IconButton>
-                </span>
+            <div className={"header-buttons"}>
+                <Stack direction={"row"}>
 
-            </Stack>
+                    <span onClick={changeThemeHandler}>
+                        <IconButton>
+                            {theme === "dark" ? <LightMode  color={"info"}/> : <DarkMode />}
+                        </IconButton>
+                    </span>
+                </Stack>
+            </div>
 
 
         </div>
