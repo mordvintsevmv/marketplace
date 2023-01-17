@@ -1,0 +1,125 @@
+h1 {
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 70px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 33px;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+h5 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+h6 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.app-light {
+  color: #323232;
+
+  background-color: #FFFFFF;
+
+
+  & h1 {
+    color: rgba(50, 50, 50, .9);
+  }
+
+  & h2 {
+    color: rgba(50, 50, 50, .8);
+  }
+
+  & h3 {
+    color: rgba(50, 50, 50, .9);
+  }
+
+  & h4 {
+    color: rgba(50, 50, 50, .9);
+  }
+
+  & h5 {
+    color: rgba(50, 50, 50, .55);
+  }
+
+  & h6 {
+    color: rgba(50, 50, 50, .9);
+  }
+
+  & p {
+    color: rgba(50, 50, 50, .78);
+  }
+
+}
+
+.app-dark {
+  color: rgba(255, 255, 255, .78);
+
+  background-color: #171717;
+
+  & h1 {
+    color: rgba(255, 255, 255, .9);
+  }
+
+  & h2 {
+    color: rgba(255, 255, 255, .8);
+  }
+
+  & h3 {
+    color: rgba(255, 255, 255, .9);
+  }
+
+  & h4 {
+    color: rgba(255, 255, 255, .9);
+  }
+
+  & h5 {
+    color: rgba(255, 255, 255, .55);
+  }
+
+  & h6 {
+    color: rgba(255, 255, 255, .9);
+  }
+
+  & p {
+    color: rgba(255, 255, 255, .78);
+  }
+}
+
+body {
+  font-family: Montserrat, sans-serif;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+a:active,
+a:hover,
+a {
+  text-decoration: none;
+}

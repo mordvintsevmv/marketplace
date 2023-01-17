@@ -31,7 +31,6 @@ const Categories: FC = () => {
     return (
         <div className={""}>
 
-
             <Header title={"Categories"}/>
 
             <Stack direction={"row"}>
