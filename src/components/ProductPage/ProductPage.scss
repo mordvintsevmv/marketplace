@@ -21,6 +21,8 @@
 }
 
 .product-page {
+
+  overflow: scroll;
   padding: 65px 20px 0 45px;
 
   position: fixed;
@@ -75,6 +77,7 @@
     top: 15px;
 
   }
+
 }
 
 .product-page-rating {
