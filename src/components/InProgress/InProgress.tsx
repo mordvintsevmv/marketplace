@@ -19,6 +19,7 @@ const InProgress: FC<InProgressProps> = ({title, description}) => {
                 <div className={"in-progress__title"}>
                     <h4>{title}</h4>
                 </div>
+
             </div>
 
             <div className={"in-progress__description"}>

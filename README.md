@@ -4,8 +4,15 @@
 
 ## ToDo
 
-- [ ] Доделать List
+- [ ] More features with ag-grid
 
-- [ ] Анимации
+- [ ] Animations
 
-- [ ] Баннер "в работе"
+- [ ] Cart Component
+
+- [ ] Design improvement
+
+- [ ] Fix Favorite Page 
+
+- [ ] Refactoring 
+
