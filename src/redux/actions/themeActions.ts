@@ -5,4 +5,5 @@ const {set} = themeSlice.actions
 
 export const setTheme = (theme: String) => async (dispatch: Dispatch) => {
     dispatch(set(theme))
+    localStorage.setItem("theme", theme.toString())
 }
