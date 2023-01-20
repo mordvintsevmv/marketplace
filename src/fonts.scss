@@ -78,6 +78,8 @@ p {
     color: rgba(50, 50, 50, .3);
   }
 
+  transition: 0.5s;
+
 }
 
 .app-dark {
@@ -116,6 +118,9 @@ p {
   & a {
     color: rgba(255, 255, 255, .78);
   }
+
+  transition: 0.5s;
+
 }
 
 body {
@@ -124,6 +129,8 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 30px;
+
+
 }
 
 a:active,

@@ -25,13 +25,14 @@
     }
 }
 
-
 .content-light {
     background-color: #F0EEEF;
+    transition: 0.5s;
 }
 
 .content-dark {
     background-color: #202124;
+    transition:  0.5s;
 }
 
 .blured {
