@@ -1,12 +1,26 @@
 # Marketplace
 
+This is a prototype marketplace for testing the features of React, Redux, Typescript and various libraries.
+
+**Currently developed:**
+- [X] Main Components (Product Card, Pages, etc)
+- [X] Redux store (Redux toolkit) with reducers for storing the application state
+- [X] Saving cart and favorites in localStorage
+- [X] Dark and Light Mode
+- [X] Responsive Design
+- [X] Implemented MUI components into the App
+
+
 <a href="https://mordvintsevmv.github.io/marketplace" target="_blank">Test App</a>
 
 ---
 
 ## <a name="content">Content</a>
 
-0. [Design](#layout)
+0. [Design](#design)
+   1. [Layout](#design-layout)
+   2. [Design - Theme](#design-theme)
+   3. [Design - Responsive Design](#design-responsive)
 1. [Technologies](#technologies)
 1. [ToDo](#todo)
 2. [Contacts](#contacts)
@@ -14,12 +28,71 @@
 
 ---
 
-## <a name="layout">Design</a>
+## <a name="design">Design</a>
 
+### <a name="design-layout">Layout</a>
 The <a href="https://dribbble.com/shots/16007150-Drop-Shipping-Platform">DropShipping Platform layout</a> 
 was taken as a basis for Design of the Marketplace App.
 
 ![layout](readme-img/layout.png)
+
+---
+
+### <a name="design-theme">Design - Theme</a>
+
+Dark Theme:
+
+![design-dark](readme-img/design-theme-dark.png)
+
+Light Theme:
+
+![design-light](readme-img/design-theme-light.png)
+
+
+To develop the function , the following were used:
+
+- **localStorage** - save user preferences in browser memory
+- **Redux Store** - store the current state of the theme and use it in any component of the app.
+
+**Initializing theme:**
+```javascript
+const getTheme = () => {
+    
+const theme = `${window?.localStorage?.getItem('theme')}`
+   
+if ([ 'light', 'dark' ].includes(theme)) return theme
+
+    const userMedia = window.matchMedia('(prefers-color-scheme: light)')
+   
+    if (userMedia.matches) return 'light'
+
+    return 'dark'
+}
+```
+
+**Set Theme Function:**
+```javascript
+export const setTheme = (theme: String) => async (dispatch: Dispatch) => {
+    
+    dispatch(set(theme))
+    localStorage.setItem("theme", theme.toString())
+   
+}
+```
+
+---
+
+### <a name="design-responsive">Design - Responsive Design</a>
+
+The application is adapted to most devices with different display sizes.
+
+CSS **media-queries**, **flex** and **grid** display were used for responsive design.
+
+**Examples:**
+
+![design-responsive-1](readme-img/design-responsive-1.png)
+
+![design-responsive-2](readme-img/design-responsive-2.png)
 
 [🔝Content🔝](#content)
 
