@@ -9,8 +9,8 @@
 0. [Design](#layout)
 1. [Technologies](#technologies)
 1. [ToDo](#todo)
+2. [Contacts](#contacts)
 
-[🔝Content🔝](#content)
 
 ---
 
@@ -56,5 +56,16 @@ was taken as a basis for Design of the Marketplace App.
 - [ ] Search feature
 
 - [ ] Refactoring 
+
+[🔝Content🔝](#content)
+
+---
+
+## <a name="contacts">Contacts</a>
+
+**TG**: [@mordvintsevmv](https://t.me/mordvintsevmv)
+
+**e-mail**: mordvintsevmv@gmail.com
+
 
 [🔝Content🔝](#content)
