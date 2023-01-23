@@ -27,13 +27,15 @@ was taken as a basis for Design of the Marketplace App.
 
 ## <a name="technologies">Technologies</a>
 
-<img style="display: inline-block" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425" width="40" alt="html"/>
-<img style="display: inline-block" src="https://1000logos.net/wp-content/uploads/2020/08/Sass-Logo-1024x640.png" width="40" alt="scss"/>
-<img style="display: inline-block" src="https://www.svgrepo.com/show/303600/typescript-logo.svg" width="40" alt="typescript"/>
-<img style="display: inline-block" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" width="40" alt="react"/>
-<img style="display: inline-block" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png" width="40" alt="redux"/>
-<img style="display: inline-block" src="https://blog.ag-grid.com/content/images/2021/02/new-logo-1.png" width="80" alt="ag grid"/>
-<img style="display: inline-block" src="https://mui.com/static/logo.png" width="40" alt="mui"/>
+<div style="display:flex; gap: 10px">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425" width="40" alt="html"/>
+<img src="https://1000logos.net/wp-content/uploads/2020/08/Sass-Logo-1024x640.png" width="40" alt="scss"/>
+<img src="https://www.svgrepo.com/show/303600/typescript-logo.svg" width="40" alt="typescript"/>
+<img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" width="40" alt="react"/>
+<img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png" width="40" alt="redux"/>
+<img src="https://blog.ag-grid.com/content/images/2021/02/new-logo-1.png" width="80" alt="ag grid"/>
+<img src="https://mui.com/static/logo.png" width="40" alt="mui"/>
+</div>
 
 [🔝Content🔝](#content)
 
