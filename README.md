@@ -33,7 +33,7 @@ was taken as a basis for Design of the Marketplace App.
 <img src="https://www.svgrepo.com/show/303600/typescript-logo.svg" width="40" alt="typescript"/>
 <img src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg" width="40" alt="react"/>
 <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png" width="40" alt="redux"/>
-<img src="https://blog.ag-grid.com/content/images/2021/02/new-logo-1.png" width="60" alt="ag grid"/>
+<img src="https://blog.ag-grid.com/content/images/2021/02/new-logo-1.png" width="80" alt="ag grid"/>
 <img src="https://mui.com/static/logo.png" width="40" alt="mui"/>
 
 [🔝Content🔝](#content)
