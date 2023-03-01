@@ -120,11 +120,7 @@ CSS **media-queries**, **flex** and **grid** display were used for responsive de
 
 - [ ] Animations
 
-- [ ] Cart Component
-
 - [ ] Design improvement
-
-- [ ] Fix Favorite Page 
 
 - [ ] Search feature
 
