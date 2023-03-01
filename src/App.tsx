@@ -15,10 +15,11 @@ import {useActions} from "./hooks/actions";
 function App() {
 
     const theme = useTypedSelector(state => state.themeReducer)
-    const {initProducts} = useActions()
+    const {fetchProducts, fetchLists} = useActions()
 
     useEffect(()=>{
-        initProducts()
+        fetchProducts()
+        fetchLists()
     }, [])
 
 

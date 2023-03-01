@@ -1,4 +1,4 @@
-import {FC} from "react";
+import React, {FC} from "react";
 import Header from "../Header/Header";
 import ProductCard from "../ProductCard/ProductCard";
 import {useTypedSelector} from "../../hooks/typedHooks";
@@ -7,16 +7,15 @@ import "../../App.css"
 const FavoritePage: FC = () => {
 
 
-    const {products} = useTypedSelector(state => state.productReducer)
-    const favString = localStorage.getItem("favorite")
-    let favCards: Array<React.ReactNode> = []
+    const {favorite, products} = useTypedSelector(state => state.productReducer)
 
-    if (favString !== null) {
-        const favorite = favString.split(",");
+    let favCards: Array<React.ReactNode>
 
-        favCards = products.map(product => favorite.includes(String(product.id)) ?
-            <ProductCard product={product}/> : null)
-    }
+    products.length !== 0 ? favCards = favorite.map(favID => {
+        const productID = products.findIndex(product => product.id === favID)
+        const product = products[productID]
+        return (<ProductCard product={product} key={product.id}/>)
+    }) : favCards = []
 
     return (
         <div className={"favorite-page"}>
