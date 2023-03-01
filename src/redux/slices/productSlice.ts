@@ -35,11 +35,11 @@ export const productSlice = createSlice({
             state.loading = false;
         },
 
-        setCart: (state, action) => {
+        updateCart: (state, action) => {
             state.cart = action.payload
         },
 
-        setFavorite: (state, action) => {
+        updateFavorite: (state, action) => {
             state.favorite = action.payload
         }
 

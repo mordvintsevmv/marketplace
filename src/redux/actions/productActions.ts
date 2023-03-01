@@ -2,7 +2,7 @@ import {Dispatch} from "@reduxjs/toolkit";
 import {productSlice} from "../slices/productSlice";
 import axios from "axios";
 
-const {productsSuccess, productsError, productsLoading, setCart, setFavorite} = productSlice.actions
+const {productsSuccess, productsError, productsLoading, updateCart, updateFavorite} = productSlice.actions
 
 export const fetchProducts = () => async (dispatch: Dispatch) => {
     try {
@@ -14,17 +14,26 @@ export const fetchProducts = () => async (dispatch: Dispatch) => {
     }
 }
 
-export const updateCart = (cart: number[]) => (dispatch: Dispatch) => {
+export const setCart = (cart: number[]) => (dispatch: Dispatch) => {
     localStorage.setItem('cart', cart.toString())
 
-    const cartList = localStorage.getItem('cart')?.split(",") || []
-    dispatch(setCart(cartList))
+    let cartList = localStorage.getItem('cart')?.split(",").map(Number) || []
+    dispatch(updateCart(cartList))
 
 }
 
-export const updateFavourite = (favorite: number[]) => (dispatch: Dispatch) => {
+export const setFavourite = (favorite: number[]) => (dispatch: Dispatch) => {
     localStorage.setItem('favorite', favorite.toString())
 
-    const favouriteList = localStorage.getItem('favorite')?.split(",") || []
-    dispatch(setFavorite(favouriteList))
+    let favoriteList = localStorage.getItem('favorite')?.split(",").map(Number) || []
+    dispatch(updateFavorite(favoriteList))
+}
+
+export const initProducts = () => (dispatch: Dispatch) => {
+    let favoriteList = localStorage.getItem('favorite')?.split(",").map(Number) || []
+    dispatch(updateFavorite(favoriteList))
+
+    let cartList = localStorage.getItem('cart')?.split(",").map(Number) || []
+    dispatch(updateCart(cartList))
+
 }
