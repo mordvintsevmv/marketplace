@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './App.css';
 import "./fonts.scss"
 import Sidebar from "./components/Sidebar/Sidebar";
@@ -10,10 +10,17 @@ import ProductPage from "./components/ProductPage/ProductPage";
 import FavoritePage from "./components/FavoritePage/FavoritePage";
 import {useTypedSelector} from "./hooks/typedHooks";
 import Categories from "./components/Categories/Categories";
+import {useActions} from "./hooks/actions";
 
 function App() {
 
     const theme = useTypedSelector(state => state.themeReducer)
+    const {initProducts} = useActions()
+
+    useEffect(()=>{
+        initProducts()
+    }, [])
+
 
     return (
         <div className={`app app-${theme}`}>

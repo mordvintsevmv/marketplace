@@ -1,6 +1,8 @@
-import React, {FC, useCallback, useEffect, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import IconButton from "@mui/material/IconButton";
 import {ShoppingCart} from "@mui/icons-material";
+import {useTypedSelector} from "../../hooks/typedHooks";
+import {useActions} from "../../hooks/actions";
 
 interface CartButtonProps {
     productID: number
@@ -9,48 +11,32 @@ interface CartButtonProps {
 const CartButton: FC<CartButtonProps> = ({productID}) => {
 
     const [cartFlag, setCartFlag] = useState(false)
+    const {cart} = useTypedSelector(state => state.productReducer)
+    const {setCart} = useActions()
 
-    const checkInCart = useCallback(
-        () => {
-            let cart = localStorage.getItem("cart")
-            if (cart !== null) {
-                let cartArr = cart.split(",");
-                if (cartArr.includes(String(productID))) {
-                    setCartFlag(true)
-                } else {
-                    setCartFlag(false)
-                }
-            }
-        }, []
-    )
+    const checkInCart = () => {
+        if (cart.includes(productID)) {
+            setCartFlag(true)
+        } else {
+            setCartFlag(false)
+        }
+    }
 
-    const CartHandler = useCallback(
-        (event: React.MouseEvent<HTMLElement>) => {
-            let cart = localStorage.getItem("cart")
+    const CartHandler = () => {
+        let cartList = [...cart]
 
-            if (cart !== null) {
-                let cartArr = cart.split(",");
+        if (cartFlag){
+            cartList = cartList.filter(id => id !== productID)
+        } else {
+            cartList.push(productID)
+        }
 
-                if (cartArr.includes(String(productID))) {
-                    cartArr = cartArr.filter((id) => {
-                        return id !== String(productID)
-                    })
-                    localStorage.setItem("cart", cartArr.toString())
-                } else {
-                    localStorage.setItem("cart", String(cart + "," + String(productID)))
-                }
-            } else {
-                localStorage.setItem("cart", String(cart + "," + String(productID)))
-            }
-
-            checkInCart();
-
-        }, []
-    )
+        setCart(cartList)
+    }
 
     useEffect(() => {
         checkInCart();
-    }, [])
+    }, [cart])
 
     return (
         <span onClick={CartHandler}>

@@ -1,6 +1,8 @@
 import {Favorite} from "@mui/icons-material";
-import React, {FC, useCallback, useEffect, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import IconButton from "@mui/material/IconButton";
+import {useTypedSelector} from "../../hooks/typedHooks";
+import {useActions} from "../../hooks/actions";
 
 interface FavoriteButtonProps {
     productID: number
@@ -9,48 +11,33 @@ interface FavoriteButtonProps {
 const FavoriteButton: FC<FavoriteButtonProps> = ({productID}) => {
 
     const [favFlag, setFavFlag] = useState(false)
+    const {favorite} = useTypedSelector(state => state.productReducer)
+    const {setFavourite} = useActions()
 
-    const checkInFav = useCallback(
-        () => {
-            let fav = localStorage.getItem("favorite")
-            if (fav !== null) {
-                let favArr = fav.split(",");
-                if (favArr.includes(String(productID))) {
-                    setFavFlag(true)
-                } else {
-                    setFavFlag(false)
-                }
-            }
-        }, []
-    )
+    const checkInFav = () => {
+        if (favorite.includes(productID)){
+            setFavFlag(true)
+        } else{
+            setFavFlag(false)
+        }
+    }
 
-    const FavoriteHandler = useCallback(
-        (event: React.MouseEvent<HTMLElement>) => {
-            let fav = localStorage.getItem("favorite")
+    const FavoriteHandler = () => {
+        let favList = [...favorite]
 
-            if (fav !== null) {
-                let favArr = fav.split(",");
+        if (favFlag) {
+            favList = favorite.filter(id => id !== productID)
+        } else{
+            favList.push(productID)
+        }
 
-                if (favArr.includes(String(productID))) {
-                    favArr = favArr.filter((id) => {
-                        return id !== String(productID)
-                    })
-                    localStorage.setItem("favorite", favArr.toString())
-                } else {
-                    localStorage.setItem("favorite", String(fav + "," + String(productID)))
-                }
-            } else {
-                localStorage.setItem("favorite", String(fav + "," + String(productID)))
-            }
+        setFavourite(favList)
+    }
 
-            checkInFav();
-
-        }, []
-    )
 
     useEffect(() => {
         checkInFav();
-    }, [])
+    }, [favorite])
 
     return (
         <span onClick={FavoriteHandler}>
