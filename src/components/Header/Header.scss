@@ -6,3 +6,9 @@
 
   padding-bottom: 40px;
 }
+
+.header-dark {
+  & img {
+    filter: invert(100%);
+  }
+}
