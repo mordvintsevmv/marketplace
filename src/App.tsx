@@ -11,6 +11,7 @@ import FavoritePage from "./components/FavoritePage/FavoritePage";
 import {useTypedSelector} from "./hooks/typedHooks";
 import Categories from "./components/Categories/Categories";
 import {useActions} from "./hooks/actions";
+import CartPage from "./components/CartPage/CartPage";
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
 
                     <Route path="/favorite" element={<FavoritePage/>}/>
 
+                    <Route path="/cart" element={<CartPage/>}/>
 
                 </Routes>
             </div>
