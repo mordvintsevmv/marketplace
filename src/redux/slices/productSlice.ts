@@ -3,12 +3,16 @@ import {IProduct} from "../../types/product";
 
 interface ProductState {
     products: IProduct[],
+    cart: number[],
+    favorite: number[],
     loading: boolean,
     error: null | string
 }
 
 const initialState: ProductState = {
     products: [],
+    cart: [],
+    favorite: [],
     loading: false,
     error: null
 }
@@ -29,6 +33,14 @@ export const productSlice = createSlice({
         productsError: (state, action) => {
             state.error = action.payload;
             state.loading = false;
+        },
+
+        setCart: (state, action) => {
+            state.cart = action.payload
+        },
+
+        setFavorite: (state, action) => {
+            state.favorite = action.payload
         }
 
     }
