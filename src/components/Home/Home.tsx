@@ -1,6 +1,6 @@
 import {FC, useEffect} from "react";
 import Header from "../Header/Header";
-import InProgress from "../InProgress/InProgress";
+import WarningBanner from "../WarningBanner/WarningBanner";
 import "./Home.scss"
 
 const Home: FC = () => {
@@ -14,7 +14,7 @@ const Home: FC = () => {
         <div className={"home-page"}>
             <Header title={"Home"}/>
 
-            <InProgress
+            <WarningBanner
                 title={"Work In Progress"}
                 description={"The application is at the stage of active development of the main functions. Some functions may not work correctly or cause errors."}/>
 

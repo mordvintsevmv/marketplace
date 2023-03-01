@@ -1,13 +1,13 @@
 import {FC} from "react";
 import {Warning} from "@mui/icons-material";
-import "./InProgress.scss"
+import "./WarningBanner.scss"
 
 interface InProgressProps {
     title: string;
     description: string;
 }
 
-const InProgress: FC<InProgressProps> = ({title, description}) => {
+const WarningBanner: FC<InProgressProps> = ({title, description}) => {
     return (
         <div className={"in-progress"}>
 
@@ -29,4 +29,4 @@ const InProgress: FC<InProgressProps> = ({title, description}) => {
     )
 }
 
-export default InProgress
+export default WarningBanner
