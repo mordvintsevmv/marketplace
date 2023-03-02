@@ -19,8 +19,6 @@ const Products: FC<PropsWithChildren> = ({children}) => {
         document.title = 'Products';
         if (products.length === 0) {
             fetchProducts();
-        } else {
-            console.log(products)
         }
     }, []);
 
