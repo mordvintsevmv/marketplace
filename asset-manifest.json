@@ -1,21 +1,19 @@
 {
   "files": {
-    "main.css": "/marketplace/static/css/main.9e69c2eb.css",
-    "main.js": "/marketplace/static/js/main.5706ce34.js",
+    "main.css": "/marketplace/static/css/main.7279ba9c.css",
+    "main.js": "/marketplace/static/js/main.83e48171.js",
     "index.html": "/marketplace/index.html",
     "static/media/home.svg": "/marketplace/static/media/home.48fa4b585a89cb301577dbf27c4c1675.svg",
     "static/media/people.svg": "/marketplace/static/media/people.735218e6cadc2b76ef22822049db6ff6.svg",
     "static/media/star.svg": "/marketplace/static/media/star.2fd95fa9fa58136d86968647721c296e.svg",
     "static/media/categories.svg": "/marketplace/static/media/categories.56e52574398557db93d97bf5d4b0bb2d.svg",
-    "static/media/cart.svg": "/marketplace/static/media/cart.9745ef13c3e420ba1f3027e7753feff7.svg",
     "static/media/table.svg": "/marketplace/static/media/table.f88b6fca3ac119f967a9f9675b4cf166.svg",
-    "static/media/heart.svg": "/marketplace/static/media/heart.801683a6c8697bf385a223a758f22318.svg",
     "static/media/list.svg": "/marketplace/static/media/list.3fb20e3a4c0bcf5f7825af48842fa023.svg",
-    "main.9e69c2eb.css.map": "/marketplace/static/css/main.9e69c2eb.css.map",
-    "main.5706ce34.js.map": "/marketplace/static/js/main.5706ce34.js.map"
+    "main.7279ba9c.css.map": "/marketplace/static/css/main.7279ba9c.css.map",
+    "main.83e48171.js.map": "/marketplace/static/js/main.83e48171.js.map"
   },
   "entrypoints": [
-    "static/css/main.9e69c2eb.css",
-    "static/js/main.5706ce34.js"
+    "static/css/main.7279ba9c.css",
+    "static/js/main.83e48171.js"
   ]
 }
