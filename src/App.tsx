@@ -12,47 +12,53 @@ import {useTypedSelector} from "./hooks/typedHooks";
 import Categories from "./components/Categories/Categories";
 import {useActions} from "./hooks/actions";
 import CartPage from "./components/CartPage/CartPage";
+import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import {darkTheme, lightTheme} from "./mui/themes";
+
 
 function App() {
 
     const theme = useTypedSelector(state => state.themeReducer)
     const {fetchProducts, fetchLists} = useActions()
 
-    useEffect(()=>{
+    useEffect(() => {
         fetchProducts()
         fetchLists()
     }, [])
 
 
     return (
-        <div className={`app app-${theme}`}>
+        <ThemeProvider theme={theme === 'dark' ? createTheme(darkTheme) : createTheme(lightTheme)}>
+            <CssBaseline/>
+
+            <div className={`app app-${theme}`}>
 
                 <Sidebar/>
 
-            <div className={`content content-${theme}`}>
-                <Routes>
+                <div className={`content content-${theme}`}>
+                    <Routes>
 
-                    <Route path="/" element={<Home/>}/>
+                        <Route path="/" element={<Home/>}/>
 
-                    <Route path="/list" element={<ItemList/>}/>
+                        <Route path="/list" element={<ItemList/>}/>
 
-                    <Route path="/products" element={<Products/>}/>
+                        <Route path="/products" element={<Products/>}/>
 
-                    <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
+                        <Route path="/products/:productID" element={<Products><ProductPage/></Products>}/>
 
-                    <Route path="/categories" element={<Categories/>}/>
+                        <Route path="/categories" element={<Categories/>}/>
 
-                    <Route path="/categories/:category" element={<Categories/>}/>
+                        <Route path="/categories/:category" element={<Categories/>}/>
 
-                    <Route path="/favorite" element={<FavoritePage/>}/>
+                        <Route path="/favorite" element={<FavoritePage/>}/>
 
-                    <Route path="/cart" element={<CartPage/>}/>
+                        <Route path="/cart" element={<CartPage/>}/>
 
-                </Routes>
+                    </Routes>
+                </div>
             </div>
 
-
-        </div>
+        </ThemeProvider>
     )
         ;
 }
