@@ -7,7 +7,7 @@ import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
 import {NavLink} from "react-router-dom";
 import Badge from '@mui/material/Badge';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 interface HeaderProps {
@@ -43,7 +43,7 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
                     <NavLink to={"/favorite"}>
                         <IconButton>
                             <Badge badgeContent={favorite.length} color="secondary">
-                                <FavoriteBorderIcon/>
+                                <FavoriteIcon/>
                             </Badge>
                         </IconButton>
                     </NavLink>

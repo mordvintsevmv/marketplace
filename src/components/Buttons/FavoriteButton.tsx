@@ -1,8 +1,9 @@
-import {Favorite} from "@mui/icons-material";
 import React, {FC, useEffect, useState} from "react";
 import IconButton from "@mui/material/IconButton";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 
 interface FavoriteButtonProps {
     productID: number
@@ -15,9 +16,9 @@ const FavoriteButton: FC<FavoriteButtonProps> = ({productID}) => {
     const {setFavourite} = useActions()
 
     const checkInFav = () => {
-        if (favorite.includes(productID)){
+        if (favorite.includes(productID)) {
             setFavFlag(true)
-        } else{
+        } else {
             setFavFlag(false)
         }
     }
@@ -27,7 +28,7 @@ const FavoriteButton: FC<FavoriteButtonProps> = ({productID}) => {
 
         if (favFlag) {
             favList = favorite.filter(id => id !== productID)
-        } else{
+        } else {
             favList.push(productID)
         }
 
@@ -41,8 +42,8 @@ const FavoriteButton: FC<FavoriteButtonProps> = ({productID}) => {
 
     return (
         <span onClick={FavoriteHandler}>
-            <IconButton aria-label={"Add to favorite"} color={favFlag ? "secondary" : "primary"}>
-                <Favorite/>
+            <IconButton aria-label={"Add to favorite"}>
+                {favFlag ? <FavoriteIcon color={'secondary'}/> : <FavoriteBorderIcon/>}
             </IconButton>
         </span>
     )

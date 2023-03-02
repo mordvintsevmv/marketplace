@@ -1,8 +1,9 @@
 import React, {FC, useEffect, useState} from "react";
 import IconButton from "@mui/material/IconButton";
-import {ShoppingCart} from "@mui/icons-material";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
+import ShoppingBasketOutlinedIcon from '@mui/icons-material/ShoppingBasketOutlined';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 interface CartButtonProps {
     productID: number
@@ -25,7 +26,7 @@ const CartButton: FC<CartButtonProps> = ({productID}) => {
     const CartHandler = () => {
         let cartList = [...cart]
 
-        if (cartFlag){
+        if (cartFlag) {
             cartList = cartList.filter(id => id !== productID)
         } else {
             cartList.push(productID)
@@ -40,8 +41,8 @@ const CartButton: FC<CartButtonProps> = ({productID}) => {
 
     return (
         <span onClick={CartHandler}>
-            <IconButton aria-label={"Add to cart"} color={cartFlag ? "secondary" : "primary"}>
-                <ShoppingCart/>
+            <IconButton aria-label={"Add to cart"}>
+                {cartFlag ? <ShoppingBasketIcon color={'secondary'}/> : <ShoppingBasketOutlinedIcon/>}
             </IconButton>
         </span>
     )
