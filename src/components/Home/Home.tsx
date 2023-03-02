@@ -31,7 +31,6 @@ const Home: FC = () => {
                     Redux store (Redux toolkit) with reducers for storing the application state
                 </li>
 
-
                 <li>
                     Saving cart and favorites in localStorage
                 </li>
@@ -50,14 +49,6 @@ const Home: FC = () => {
             </h2>
 
             <ul>
-                <li>
-                    Animations
-                </li>
-
-                <li>
-                    Cart Component
-                </li>
-
                 <li>
                     More features with ag-grid
                 </li>
