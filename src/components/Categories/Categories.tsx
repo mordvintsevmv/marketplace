@@ -5,27 +5,17 @@ import CategoryButton from "../Buttons/CategoryButton";
 import {useParams} from "react-router-dom";
 import {IProduct} from "../../types/product";
 import ProductCard from "../ProductCard/ProductCard";
-import {Stack} from "@mui/material";
+import {Grid} from "@mui/material";
 import "../../App.css"
 import "./Categories.scss"
+
 const Categories: FC = () => {
 
     const [categories, setCategories] = useState<String[]>([])
-    const catBut = categories.map(cat => <CategoryButton category={String(cat)}/>)
-    let catStack: React.ReactNode[] = []
-
-    for (let i=0; i<catBut.length; i=i+2){
-        catStack.push(
-            <Stack direction={"row"} justifyContent="space-around" pb={"20px"}>
-                {catBut[i]}
-                {catBut[i+1] ? catBut[i+1] : null}
-            </Stack>
-        )
-    }
+    const categoryButtons = categories.map(category => <Grid item><CategoryButton category={String(category)}/></Grid>)
 
     const [products, setProducts] = useState<IProduct[]>([])
     const productCard = products.map(product => <ProductCard product={product} key={product.id}/>)
-
 
     const {category} = useParams()
 
@@ -44,13 +34,12 @@ const Categories: FC = () => {
 
             <Header title={"Categories"}/>
 
-            <div className={"categories__buttons"}>
-                {catStack}
-            </div>
+            <Grid container justifyContent="space-around" alignItems="center">
+                {categoryButtons}
+            </Grid>
 
-
-            <div className={"cards-adaptive"}>
-            {productCard}
+            <div className={"cards-adaptive categories__cards"}>
+                {productCard}
             </div>
 
         </div>
