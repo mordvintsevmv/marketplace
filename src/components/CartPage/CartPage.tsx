@@ -8,11 +8,15 @@ const CartPage: FC = () => {
 
     let cartCards: Array<React.ReactNode>
 
-    products.length !== 0 ? cartCards = cart.map(cartID => {
-        const productID = products.findIndex(product => product.id === cartID)
-        const product = products[productID]
-        return (<ProductCard product={product} key={product.id}/>)
-    }) : cartCards = []
+    if (cart.length !== 0 && products.length !== 0){
+        cartCards = cart.map(favID => {
+            const productID = products.findIndex(product => product.id === favID)
+            const product = products[productID]
+            return (<ProductCard product={product} key={product.id}/>)
+        })
+    } else {
+        cartCards = []
+    }
 
     return (
         <div className={"cart-page"}>
