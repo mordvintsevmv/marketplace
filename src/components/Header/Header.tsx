@@ -36,7 +36,8 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
                     <NavLink to={"/cart"}>
                         <IconButton>
                             <Badge badgeContent={cart.length} color="secondary">
-                                {location.pathname.includes("/cart") ? <ShoppingBasketIcon color={'secondary'}/> : <ShoppingBasketIcon/>}
+                                {location.pathname.includes("/cart") ? <ShoppingBasketIcon color={'secondary'}/> :
+                                    <ShoppingBasketIcon/>}
                             </Badge>
                         </IconButton>
                     </NavLink>
@@ -44,7 +45,8 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
                     <NavLink to={"/favorite"}>
                         <IconButton>
                             <Badge badgeContent={favorite.length} color="secondary">
-                                {location.pathname.includes("/favorite") ? <FavoriteIcon color={'secondary'}/> : <FavoriteIcon/>}
+                                {location.pathname.includes("/favorite") ? <FavoriteIcon color={'secondary'}/> :
+                                    <FavoriteIcon/>}
                             </Badge>
                         </IconButton>
                     </NavLink>

@@ -16,7 +16,6 @@ const initialState: ProductState = {
     loading: false,
     error: null
 }
-
 export const productSlice = createSlice({
     name: "products",
     initialState,

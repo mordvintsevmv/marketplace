@@ -2,7 +2,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 const getTheme = () => {
     const theme = `${window?.localStorage?.getItem('theme')}`
-    if ([ 'light', 'dark' ].includes(theme)) return theme
+    if (['light', 'dark'].includes(theme)) return theme
 
     const userMedia = window.matchMedia('(prefers-color-scheme: light)')
     if (userMedia.matches) return 'light'
@@ -15,7 +15,7 @@ const initialState = getTheme()
 export const themeSlice = createSlice({
     name: "theme",
     initialState,
-    reducers:{
+    reducers: {
         updateTheme: (state, action) => action.payload
     }
 })

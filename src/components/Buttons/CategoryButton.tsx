@@ -10,18 +10,18 @@ interface CategoryButtonProps {
 const CategoryButton: FC<CategoryButtonProps> = ({category}) => {
 
     let icon = <Category/>
-    if (category === "women's clothing"){
+    if (category === "women's clothing") {
         icon = <Female/>
-    } else if (category === "men's clothing"){
+    } else if (category === "men's clothing") {
         icon = <Male/>
-    } else if (category === "jewelery"){
+    } else if (category === "jewelery") {
         icon = <Diamond/>
-    } else if (category === "electronics"){
+    } else if (category === "electronics") {
         icon = <Power/>
     }
     return (
         <span>
-            <NavLink to={"/categories/"+category}>
+            <NavLink to={"/categories/" + category}>
                 <Button startIcon={icon} size={"small"}>
                     {category}
                 </Button>

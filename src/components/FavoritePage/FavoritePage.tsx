@@ -11,7 +11,7 @@ const FavoritePage: FC = () => {
 
     let favCards: Array<React.ReactNode>
 
-    if (favorite.length !== 0 && products.length !== 0){
+    if (favorite.length !== 0 && products.length !== 0) {
         favCards = favorite.map(favID => {
             const productID = products.findIndex(product => product.id === favID)
             const product = products[productID]

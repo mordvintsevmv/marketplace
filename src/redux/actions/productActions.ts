@@ -20,9 +20,9 @@ export const setCart = (cart: number[]) => (dispatch: Dispatch) => {
 
     let cartList = localStorage.getItem('cart')
 
-    if (cartList !== null && cartList !== ''){
+    if (cartList !== null && cartList !== '') {
         dispatch(updateCart(cartList.split(",").map(Number)))
-    } else{
+    } else {
         dispatch(updateCart([]))
     }
 
@@ -54,9 +54,9 @@ export const fetchLists = () => (dispatch: Dispatch) => {
 
     let cartList = localStorage.getItem('cart')
 
-    if (cartList !== null && cartList !== ''){
+    if (cartList !== null && cartList !== '') {
         dispatch(updateCart(cartList.split(",").map(Number)))
-    } else{
+    } else {
         dispatch(updateCart([]))
     }
 

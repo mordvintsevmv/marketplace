@@ -12,7 +12,7 @@ const CartPage: FC = () => {
     let cartCards: Array<React.ReactNode>
     let sum = 0
 
-    if (cart.length !== 0 && products.length !== 0){
+    if (cart.length !== 0 && products.length !== 0) {
         cartCards = cart.map(favID => {
             const productID = products.findIndex(product => product.id === favID)
             const product = products[productID]
@@ -40,8 +40,6 @@ const CartPage: FC = () => {
                     ${sum}
                 </Typography>
             </Stack>
-
-
 
 
         </div>

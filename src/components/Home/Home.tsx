@@ -60,29 +60,33 @@ const Home: FC = () => {
 
             <h2>Used technologies:</h2>
             <div className="home-page-tech">
-                <img className="home-page-tech__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425"
-                      alt="html"/>
+                <img className="home-page-tech__img"
+                     src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/HTML5_logo_and_wordmark.svg/1024px-HTML5_logo_and_wordmark.svg.png?20170517184425"
+                     alt="html"/>
 
-                <img className="home-page-tech__img" src="https://1000logos.net/wp-content/uploads/2020/08/Sass-Logo-1024x640.png"
-                      alt="scss"/>
+                <img className="home-page-tech__img"
+                     src="https://1000logos.net/wp-content/uploads/2020/08/Sass-Logo-1024x640.png"
+                     alt="scss"/>
 
                 <img className="home-page-tech__img" src="https://www.svgrepo.com/show/303600/typescript-logo.svg"
-                      alt="typescript"/>
+                     alt="typescript"/>
 
                 <img className="home-page-tech__img" src="https://www.vectorlogo.zone/logos/reactjs/reactjs-icon.svg"
-                      alt="react"/>
+                     alt="react"/>
 
-                <img className="home-page-tech__img" src="https://cdn.icon-icons.com/icons2/2415/PNG/512/redux_original_logo_icon_146365.png"
+                <img className="home-page-tech__img"
+                     src="https://upload.wikimedia.org/wikipedia/commons/4/49/Redux.png"
                      alt="redux"/>
 
-                <img className="home-page-tech__img" src="https://blog.ag-grid.com/content/images/2021/02/ag-grid-old-6.png"
+                <img className="home-page-tech__img"
+                     src="https://blog.ag-grid.com/content/images/2021/02/ag-grid-old-6.png"
                      alt="ag-grid"/>
 
                 <img className="home-page-tech__img" src="https://mui.com/static/logo.png" alt="mui"/>
             </div>
 
         </div>
-)
+    )
 }
 
 export default Home
