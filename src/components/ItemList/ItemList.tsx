@@ -9,6 +9,7 @@ import Header from "../Header/Header";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
 import {IProduct} from "../../types/product";
+import WarningBanner from "../WarningBanner/WarningBanner";
 
 interface ItemListProps {
 
@@ -68,6 +69,11 @@ const ItemList: FC<ItemListProps> = () => {
         <div className="item-list">
 
             <Header title={"ItemList"}/>
+
+            <WarningBanner
+                title={"Work In Progress"}
+                description={"At the moment, the table just displays all the products. In the future, the functionality will be expanded."}/>
+
 
             <div className={"ag-grid-material item-list__table"}>
 
