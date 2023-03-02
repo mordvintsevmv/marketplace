@@ -124,6 +124,8 @@ CSS **media-queries**, **flex** and **grid** display were used for responsive de
 
 - [ ] Search feature
 
+- [ ] Counting items in Cart
+
 - [ ] Refactoring 
 
 [🔝Content🔝](#content)
