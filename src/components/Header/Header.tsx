@@ -5,7 +5,7 @@ import {DarkMode, LightMode} from "@mui/icons-material";
 import {Stack} from "@mui/material";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
-import {NavLink} from "react-router-dom";
+import {NavLink, useLocation} from "react-router-dom";
 import Badge from '@mui/material/Badge';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
@@ -19,6 +19,7 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
     const theme = useTypedSelector(state => state.themeReducer)
     const {cart, favorite} = useTypedSelector(state => state.productReducer)
     const {setTheme} = useActions()
+    const location = useLocation()
 
     const changeThemeHandler = () => {
         theme === 'dark' ? setTheme('light') : setTheme('dark')
@@ -35,7 +36,7 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
                     <NavLink to={"/cart"}>
                         <IconButton>
                             <Badge badgeContent={cart.length} color="secondary">
-                                <ShoppingBasketIcon/>
+                                {location.pathname.includes("/cart") ? <ShoppingBasketIcon color={'secondary'}/> : <ShoppingBasketIcon/>}
                             </Badge>
                         </IconButton>
                     </NavLink>
@@ -43,7 +44,7 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
                     <NavLink to={"/favorite"}>
                         <IconButton>
                             <Badge badgeContent={favorite.length} color="secondary">
-                                <FavoriteIcon/>
+                                {location.pathname.includes("/favorite") ? <FavoriteIcon color={'secondary'}/> : <FavoriteIcon/>}
                             </Badge>
                         </IconButton>
                     </NavLink>
