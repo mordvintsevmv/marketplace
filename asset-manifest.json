@@ -1,19 +1,15 @@
 {
   "files": {
     "main.css": "/marketplace/static/css/main.4849bc12.css",
-    "main.js": "/marketplace/static/js/main.391dfa06.js",
+    "main.js": "/marketplace/static/js/main.66d07917.js",
     "index.html": "/marketplace/index.html",
-    "static/media/home.svg": "/marketplace/static/media/home.48fa4b585a89cb301577dbf27c4c1675.svg",
     "static/media/people.svg": "/marketplace/static/media/people.735218e6cadc2b76ef22822049db6ff6.svg",
     "static/media/star.svg": "/marketplace/static/media/star.2fd95fa9fa58136d86968647721c296e.svg",
-    "static/media/categories.svg": "/marketplace/static/media/categories.56e52574398557db93d97bf5d4b0bb2d.svg",
-    "static/media/table.svg": "/marketplace/static/media/table.f88b6fca3ac119f967a9f9675b4cf166.svg",
-    "static/media/list.svg": "/marketplace/static/media/list.3fb20e3a4c0bcf5f7825af48842fa023.svg",
     "main.4849bc12.css.map": "/marketplace/static/css/main.4849bc12.css.map",
-    "main.391dfa06.js.map": "/marketplace/static/js/main.391dfa06.js.map"
+    "main.66d07917.js.map": "/marketplace/static/js/main.66d07917.js.map"
   },
   "entrypoints": [
     "static/css/main.4849bc12.css",
-    "static/js/main.391dfa06.js"
+    "static/js/main.66d07917.js"
   ]
 }
