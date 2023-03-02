@@ -5,9 +5,9 @@ export const lightTheme: ThemeOptions = {
         fontFamily: 'Montserrat, Arial',
         fontSize: 14,
         h1: {
-            fontSize: "50px",
+            fontSize: "26px",
             fontWeight: "500",
-            lineHeight: "70px",
+            lineHeight: "38px",
             color: "rgba(50, 50, 50, .9)"
         },
         h2: {
@@ -53,9 +53,9 @@ export const darkTheme: ThemeOptions = {
     typography: {
         fontFamily: 'Montserrat, Arial',
         h1: {
-            fontSize: "50px",
+            fontSize: "26px",
             fontWeight: "500",
-            lineHeight: "70px",
+            lineHeight: "38px",
             color: "rgba(255, 255, 255, .9)"
         },
         h2: {
