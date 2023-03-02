@@ -3,6 +3,8 @@ import "./ItemList.scss"
 import {AgGridReact} from "ag-grid-react";
 import "ag-grid-community/dist/styles/ag-grid.css"
 import "ag-grid-community/dist/styles/ag-theme-alpine.css"
+import "ag-grid-community/dist/styles/ag-theme-material.css"
+
 import Header from "../Header/Header";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
@@ -67,7 +69,7 @@ const ItemList: FC<ItemListProps> = () => {
 
             <Header title={"ItemList"}/>
 
-            <div className={"ag-theme-alpine item-list__table"}>
+            <div className={"ag-grid-material item-list__table"}>
 
                 <AgGridReact
                     rowData={rowData}
