@@ -6,8 +6,9 @@ import {Stack} from "@mui/material";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
 import {NavLink} from "react-router-dom";
-import cart from "../../img/cart.svg";
-import heart from "../../img/heart.svg";
+import Badge from '@mui/material/Badge';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 
 interface HeaderProps {
     title?: string
@@ -16,6 +17,7 @@ interface HeaderProps {
 const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
 
     const theme = useTypedSelector(state => state.themeReducer)
+    const {cart, favorite} = useTypedSelector(state => state.productReducer)
     const {setTheme} = useActions()
 
     const changeThemeHandler = () => {
@@ -27,21 +29,28 @@ const Header: FC<HeaderProps> = ({title = "Marketplace"}) => {
             <h1>{title}</h1>
 
             <div className={"header-buttons"}>
-                <Stack direction={"row"}>
+                <Stack direction={"row"} spacing={2}>
+
 
                     <NavLink to={"/cart"}>
-                        <img src={cart} alt={"cart"} className={"sidebar-nav__img"}/>
+                        <IconButton>
+                            <Badge badgeContent={cart.length} color="secondary">
+                                <ShoppingBasketIcon/>
+                            </Badge>
+                        </IconButton>
                     </NavLink>
 
                     <NavLink to={"/favorite"}>
-                        <img src={heart} alt={"favorite"} className={"sidebar-nav__img"}/>
+                        <IconButton>
+                            <Badge badgeContent={favorite.length} color="secondary">
+                                <FavoriteBorderIcon/>
+                            </Badge>
+                        </IconButton>
                     </NavLink>
 
-                    <span onClick={changeThemeHandler}>
-                        <IconButton>
-                            {theme === "dark" ? <LightMode  color={"info"}/> : <DarkMode />}
-                        </IconButton>
-                    </span>
+                    <IconButton onClick={changeThemeHandler}>
+                        {theme === "dark" ? <LightMode/> : <DarkMode/>}
+                    </IconButton>
 
                 </Stack>
             </div>
