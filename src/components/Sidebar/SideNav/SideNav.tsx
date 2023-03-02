@@ -1,36 +1,41 @@
 import {FC} from "react";
-import {NavLink} from "react-router-dom";
-import home from "../../../img/home.svg"
-import list from "../../../img/list.svg"
-import table from "../../../img/table.svg"
-import categories from "../../../img/categories.svg"
-import {useTypedSelector} from "../../../hooks/typedHooks";
+import {NavLink, useLocation} from "react-router-dom";
+
+import HomeIcon from '@mui/icons-material/Home';
+import TableChartIcon from '@mui/icons-material/TableChart';
+import FormatListBulletedIcon from '@mui/icons-material/FormatListBulleted';
+import CategoryIcon from '@mui/icons-material/Category';
+import {IconButton} from "@mui/material";
 
 const SideNav: FC = () => {
 
-    const theme = useTypedSelector(state => state.themeReducer)
+    const location = useLocation();
 
     return (
         <div>
-            <nav className={`sidebar__nav sidebar-nav sidebar-nav-${theme}`}>
-                <NavLink to={""}
-                         className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
-                    <img src={home} alt={"home"} className={"sidebar-nav__img"}/>
+            <nav className={`sidebar__nav sidebar-nav`}>
+                <NavLink to={"/"}>
+                    <IconButton color={location.pathname === "/" ? 'secondary' : 'default'}>
+                        <HomeIcon/>
+                    </IconButton>
                 </NavLink>
 
-                <NavLink to={"list"}
-                         className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
-                    <img src={table} alt={"table"} className={"sidebar-nav__img"}/>
+                <NavLink to={"/list"}>
+                    <IconButton color={location.pathname.includes("/list") ? 'secondary' : 'default'}>
+                        <TableChartIcon/>
+                    </IconButton>
                 </NavLink>
 
-                <NavLink to={"products"}
-                         className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
-                    <img src={list} alt={"list"} className={"sidebar-nav__img"}/>
+                <NavLink to={"/products"}>
+                    <IconButton color={location.pathname.includes("/products") ? 'secondary' : 'default'}>
+                        <FormatListBulletedIcon/>
+                    </IconButton>
                 </NavLink>
 
-                <NavLink to={"categories"}
-                         className={({isActive}) => isActive ? 'sidebar-nav__active-link sidebar-nav__link' : 'sidebar-nav__link'}>
-                    <img src={categories} alt={"categories"} className={"sidebar-nav__img"}/>
+                <NavLink to={"/categories"}>
+                    <IconButton color={location.pathname.includes("/categories") ? 'secondary' : 'default'}>
+                        <CategoryIcon/>
+                    </IconButton>
                 </NavLink>
 
             </nav>
