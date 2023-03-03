@@ -118,9 +118,7 @@ CSS **media-queries**, **flex** and **grid** display were used for responsive de
 
 - [ ] More features with ag-grid
 
-- [ ] Animations
-
-- [ ] Design improvement
+- [ ] Fix product page
 
 - [ ] Search feature
 
