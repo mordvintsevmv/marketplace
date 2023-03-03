@@ -16,17 +16,34 @@
   }
 }
 
-.product-page {
+.product-page{
+
+  &-dark{
+    background-color: #141414;
+
+    -webkit-box-shadow: 0 0 20px 10px #141414;
+    -moz-box-shadow: 0 0 20px 10px #141414;
+    box-shadow: 0 0 20px 10px #141414;
+  }
+
+  &-light{
+    background-color: #FFFFFF;
+
+    -webkit-box-shadow: 0 0 20px 10px #F0EEEF;
+    -moz-box-shadow: 0 0 20px 10px #F0EEEF;
+    box-shadow: 0 0 20px 10px #F0EEEF;
+  }
 
   overflow: scroll;
   padding: 65px 20px 0 45px;
+
+
 
   position: fixed;
 
   top: 0;
   right: 0;
 
-  background-color: #556899;
   z-index: 40;
 
   &__image {

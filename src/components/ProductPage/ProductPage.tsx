@@ -17,6 +17,7 @@ const ProductPage: FC = () => {
 
     const {productID} = useParams();
     const {products} = useTypedSelector(state => state.productReducer)
+    const theme = useTypedSelector(state => state.themeReducer)
 
     const [product, setProduct] = useState<IProduct>()
 
@@ -36,8 +37,7 @@ const ProductPage: FC = () => {
 
     if (product) {
         return (
-            <div className={"product-page"}>
-
+            <div className={`product-page product-page-${theme}`}>
                 <NavLink to={"/products"}>
                     <div className={"product-page__cross"}>
                         <IconButton>
@@ -97,8 +97,8 @@ const ProductPage: FC = () => {
     } else {
         return (
 
-            <div className={"product-page"}>
 
+            <div className={`product-page product-page-${theme}`}>
                 <NavLink to={"/products"}>
                     <div className={"product-page__cross"}>
                         <IconButton>
