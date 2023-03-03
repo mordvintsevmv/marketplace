@@ -59,56 +59,6 @@
   }
 }
 
-.product-card-rating {
-
-  height: 50px;
-  width: 70px;
-
-  border-radius: 15px;
-
-  &__top {
-    position: absolute;
-    top: 0;
-    right: 10px;
-
-    display: flex;
-    align-items: center;
-    gap: 5px;
-  }
-
-  &__bottom {
-    position: absolute;
-    top: 25px;
-    right: 15px;
-
-    display: flex;
-    align-items: center;
-    gap: 5px;
-
-  }
-
-  &__star {
-    width: 20px;
-  }
-
-  &__rate {
-    font-size: 20px;
-  }
-
-  &__people {
-    width: 12px;
-  }
-
-  &__people-dark {
-    filter: invert(100%);
-  }
-
-  &__count {
-    color: #D1D1D1;
-    font-size: 12px;
-  }
-}
-
 .product-card-dark {
   background-color: #303134;
 }

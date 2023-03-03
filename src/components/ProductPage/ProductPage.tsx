@@ -3,8 +3,6 @@ import {NavLink, useParams} from "react-router-dom";
 import "./ProductPage.scss"
 import axios from "axios";
 import {IProduct} from "../../types/product";
-import star from "../../img/star.svg";
-import people from "../../img/people.svg";
 import IconButton from "@mui/material/IconButton";
 import {Close} from "@mui/icons-material";
 import FavoriteButton from "../Buttons/FavoriteButton";
@@ -12,6 +10,8 @@ import Loading from "../Loading/Loading";
 import {Stack} from "@mui/material";
 import CartButton from "../Buttons/CartButton";
 import {useTypedSelector} from "../../hooks/typedHooks";
+import StarIcon from '@mui/icons-material/Star';
+import GroupsIcon from '@mui/icons-material/Groups';
 
 const ProductPage: FC = () => {
 
@@ -78,7 +78,7 @@ const ProductPage: FC = () => {
 
                 <div className={"product-page__rating product-page-rating"}>
                     <div className={"product-page-rating__top"}>
-                        <img src={star} alt={"rating"} className={"product-page-rating__star"}/>
+                        <StarIcon/>
                         <span
                             className={"product-page-rating__rate"}
                             style={product.rating.rate < 3.5 ? {color: "#EF7873"} : {color: "#B5D495"}}
@@ -86,7 +86,7 @@ const ProductPage: FC = () => {
                     </div>
 
                     <div className={"product-page-rating__bottom"}>
-                        <img src={people} alt={"count"} className={"product-page-rating__people"}/>
+                        <GroupsIcon fontSize={'small'}/>
                         <span className={"product-page-rating__count"}>{product.rating.count}</span>
                     </div>
 

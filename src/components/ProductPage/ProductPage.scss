@@ -105,7 +105,7 @@
   &__bottom {
     position: absolute;
     top: 25px;
-    right: 15px;
+    right: 21px;
 
     display: flex;
     align-items: center;
@@ -113,21 +113,11 @@
 
   }
 
-
-  &__star {
-    width: 20px;
-  }
-
   &__rate {
     font-size: 20px;
   }
 
-  &__people {
-    width: 12px;
-  }
-
   &__count {
-    color: #D1D1D1;
     font-size: 12px;
   }
 
