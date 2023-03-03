@@ -68,9 +68,9 @@ const ProductPage: FC = () => {
                     <h2>${product.price}</h2>
                 </div>
 
-                <Stack direction={"row"}>
+                <Stack direction={"row"} alignItems="center" spacing={2} sx={{mt: 2}}>
 
-                    <CartButton productID={product.id}/>
+                    <CartButton productID={product.id} type={'button'}/>
 
                     <FavoriteButton productID={product.id}/>
 
