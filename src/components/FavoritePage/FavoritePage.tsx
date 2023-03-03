@@ -3,6 +3,8 @@ import Header from "../Header/Header";
 import ProductCard from "../ProductCard/ProductCard";
 import {useTypedSelector} from "../../hooks/typedHooks";
 import "../../App.css"
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
 
 const FavoritePage: FC = () => {
 
@@ -21,15 +23,28 @@ const FavoritePage: FC = () => {
         favCards = []
     }
 
-    return (
-        <div className={"favorite-page"}>
-            <Header title={"Favorite Items"}/>
+    if (favCards.length !== 0) {
+        return (
+            <div className={"favorite-page"}>
+                <Header title={"Favorite Items"}/>
 
-            <div className={"cards-adaptive"}>
-                {favCards}
+                <div className={"cards-adaptive"}>
+                    {favCards}
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <div className={"favorite-page"}>
+                <Header title={"Favorite Items"}/>
+
+                <Alert severity="info">
+                    <AlertTitle>Empty favorite list</AlertTitle>
+                    Add items to favorite list to save them!
+                </Alert>
+            </div>)
+
+    }
 }
 
 export default FavoritePage

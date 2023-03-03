@@ -5,6 +5,8 @@ import Header from "../Header/Header";
 import './CartPage.scss'
 import Button from '@mui/material/Button';
 import {Stack, Typography} from "@mui/material";
+import Alert from "@mui/material/Alert";
+import AlertTitle from "@mui/material/AlertTitle";
 
 const CartPage: FC = () => {
     const {cart, products} = useTypedSelector(state => state.productReducer)
@@ -23,28 +25,40 @@ const CartPage: FC = () => {
         cartCards = []
     }
 
-    return (
-        <div className={"cart-page"}>
-            <Header title={"Cart Items"}/>
+    if (cartCards.length !== 0) {
+        return (
+            <div className={"cart-page"}>
+                <Header title={"Cart Items"}/>
 
-            <div className={"cards-adaptive cart-page__cards"}>
-                {cartCards}
+                <div className={"cards-adaptive cart-page__cards"}>
+                    {cartCards}
+                </div>
+
+                <Stack direction={'row'} spacing={2} justifyContent="center" alignItems="center">
+                    <Button variant="contained" disabled>
+                        Order
+                    </Button>
+
+                    <Typography variant={'h3'} color={'secondary'}>
+                        ${sum}
+                    </Typography>
+                </Stack>
+
+
             </div>
+        )
+    } else {
+        return (
+            <div className={"favorite-page"}>
+                <Header title={"Favorite Items"}/>
 
-            <Stack direction={'row'} spacing={2} justifyContent="center" alignItems="center">
-                <Button variant="contained" disabled>
-                    Order
-                </Button>
+                <Alert severity="info">
+                    <AlertTitle>Empty cart</AlertTitle>
+                    Add items to cart to order them!
+                </Alert>
+            </div>)
 
-                <Typography variant={'h3'} color={'secondary'}>
-                    ${sum}
-                </Typography>
-            </Stack>
-
-
-        </div>
-    )
-
+    }
 }
 
 export default CartPage
