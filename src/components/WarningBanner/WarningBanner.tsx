@@ -9,20 +9,20 @@ interface InProgressProps {
 
 const WarningBanner: FC<InProgressProps> = ({title, description}) => {
     return (
-        <div className={"in-progress"}>
+        <div className={"warning-banner"}>
 
-            <div className={"in-progress__top"}>
-                <div className={"in-progress__warn"}>
+            <div className={"warning-banner__top"}>
+                <div className={"warning-banner__warn"}>
                     <Warning/>
                 </div>
 
-                <div className={"in-progress__title"}>
+                <div className={"warning-banner__title"}>
                     <h4>{title}</h4>
                 </div>
 
             </div>
 
-            <div className={"in-progress__description"}>
+            <div className={"warning-banner__description"}>
                 {description}
             </div>
         </div>
