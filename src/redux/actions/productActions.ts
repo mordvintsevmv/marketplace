@@ -1,8 +1,6 @@
 import {Dispatch} from "@reduxjs/toolkit";
-import {productSlice} from "../slices/productSlice";
+import {productsError, productsLoading, productsSuccess, updateCart, updateFavorite} from "../slices/productSlice";
 import axios from "axios";
-
-const {productsSuccess, productsError, productsLoading, updateCart, updateFavorite} = productSlice.actions
 
 export const fetchProducts = () => async (dispatch: Dispatch) => {
 

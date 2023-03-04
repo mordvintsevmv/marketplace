@@ -1,7 +1,5 @@
 import {Dispatch} from "@reduxjs/toolkit";
-import {themeSlice} from "../slices/themeSlice";
-
-const {updateTheme} = themeSlice.actions
+import {updateTheme} from "../slices/themeSlice";
 
 export const setTheme = (theme: String) => async (dispatch: Dispatch) => {
     localStorage.setItem("theme", theme.toString())
