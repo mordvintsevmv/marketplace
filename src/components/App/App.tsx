@@ -1,19 +1,18 @@
 import React, {useEffect} from 'react';
 import './App.css';
-import "./fonts.scss"
-import Sidebar from "./components/Sidebar/Sidebar";
-import ItemList from "./components/ItemList/ItemList";
+import Sidebar from "../Sidebar/Sidebar";
+import ItemList from "../ItemList/ItemList";
 import {Route, Routes} from "react-router-dom"
-import Home from "./components/Home/Home";
-import Products from "./components/Products/Products"
-import ProductPage from "./components/ProductPage/ProductPage";
-import FavoritePage from "./components/FavoritePage/FavoritePage";
-import {useTypedSelector} from "./hooks/typedHooks";
-import Categories from "./components/Categories/Categories";
-import {useActions} from "./hooks/actions";
-import CartPage from "./components/CartPage/CartPage";
+import Home from "../Home/Home";
+import Products from "../Products/Products"
+import ProductPage from "../ProductPage/ProductPage";
+import FavoritePage from "../FavoritePage/FavoritePage";
+import {useTypedSelector} from "../../hooks/typedHooks";
+import Categories from "../Categories/Categories";
+import {useActions} from "../../hooks/actions";
+import CartPage from "../CartPage/CartPage";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
-import {darkTheme, lightTheme} from "./mui/themes";
+import {darkTheme, lightTheme} from "../../mui/themes";
 
 
 function App() {

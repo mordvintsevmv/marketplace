@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import ProductCard from "../ProductCard/ProductCard";
 import {IProduct} from "../../types/product";
 import "./Products.scss"
-import "../../App.css"
+import "../App/App.css"
 import {useTypedSelector} from "../../hooks/typedHooks";
 import {useActions} from "../../hooks/actions";
 import Loading from "../Loading/Loading";

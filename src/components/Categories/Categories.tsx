@@ -6,7 +6,7 @@ import {useParams} from "react-router-dom";
 import {IProduct} from "../../types/product";
 import ProductCard from "../ProductCard/ProductCard";
 import {Grid} from "@mui/material";
-import "../../App.css"
+import "../App/App.css"
 import "./Categories.scss"
 
 const Categories: FC = () => {

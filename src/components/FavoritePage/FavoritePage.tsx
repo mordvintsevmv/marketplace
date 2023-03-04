@@ -2,7 +2,7 @@ import React, {FC} from "react";
 import Header from "../Header/Header";
 import ProductCard from "../ProductCard/ProductCard";
 import {useTypedSelector} from "../../hooks/typedHooks";
-import "../../App.css"
+import "../App/App.css"
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 
