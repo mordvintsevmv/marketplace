@@ -12,4 +12,9 @@ describe('Testing WarningBanner Component', () => {
         expect(screen.getByText('Test description')).toBeInTheDocument();
     })
 
+    test('WarningBanner snapshot', ()=>{
+        const view = render(<WarningBanner title={title} description={description}/>);
+
+        expect(view).toMatchSnapshot()
+    })
 })
