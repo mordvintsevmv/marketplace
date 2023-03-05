@@ -1,7 +1,7 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {IProduct} from "../../types/product";
 
-interface ProductState {
+export interface ProductState {
     products: IProduct[],
     cart: number[],
     favorite: number[],
